@@ -26,7 +26,8 @@ def mostrar():
     impar = 0
     soma_impar = 0
     soma_par = 0
-
+    maior_valor = 0
+    menor_valor = 0
     for i in range(inicio_int, final_int + 1):
         
         if i % 2 == 0:
