@@ -4,7 +4,6 @@ def inicio_final():
         while True:
             inicio = input("Digite um numero inteiro ! ").strip()
             if inicio.isdigit():
-                global inicio_int
                 inicio_int = int(inicio)
                 break
             else:
@@ -12,22 +11,20 @@ def inicio_final():
         while True:
             final = input("Digite um numero final !").strip()
             if final.isdigit():
-                global final_int
                 final_int = int(final)
                 if final_int > inicio_int:
                     break
                 else:
                     print("Numero final é menor ou igual ao do inicio")
-
-        return inicio, final 
+            else:
+                print("Numero final incorreeto, digite novamente !")
+        return inicio_int, final_int 
 
 def mostrar():
     par = 0 
     impar = 0
     soma_impar = 0
     soma_par = 0
-    maior_valor = 0
-    menor_valor = 0
     for i in range(inicio_int, final_int + 1):
         
         if i % 2 == 0:
@@ -44,6 +41,8 @@ def mostrar():
     print(f"Total de ímpares: {impar}")
     print(f"Soma dos pares: {soma_par}")
     print(f"Soma dos ímpares: {soma_impar}")
+    print(f"Menor valor {inicio_int}")
+    print(f"Maior valor {final_int}")
 
 tem_intervalo = False
 
@@ -55,7 +54,7 @@ while True:
     if escolha.isdigit():
         entrada = int(escolha)  
         if entrada == 1:
-            inicio_final()
+            inicio_int, final_int = inicio_final()
             tem_intervalo = True
         elif entrada == 2:
             if not tem_intervalo:
