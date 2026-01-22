@@ -24,6 +24,8 @@ while True:
                         produto: {
                             "Preco": preco,
                             "Quantidade": qtd
+
+                            
                         }
                     }
 
