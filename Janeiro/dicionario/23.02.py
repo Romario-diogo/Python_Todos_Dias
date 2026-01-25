@@ -25,7 +25,7 @@ def cadastro_cliente():
             cadastro["Nome"]=nome
             break
         else:
-            print("Nome digitado para cadastro incorreto, tente novamente!")
+            print("Nome Digitado para cadastro incorreto, tente novamente!")
 # Validação Idade 
     while True:
         idade = input("Digite a idade do cliente: ").strip()
