@@ -2,14 +2,8 @@ invalidos = []
 duplicados = []
 cadastros = {}
 def verificacao():
-
-    if not len(cpf_int) == 11:
-        invalidos.append((nome, idade_int, cpf_int))
     
-    if not nome.isalpha():
-        invalidos.append((nome, idade_int, cpf_int))
-    
-    if not idade_int >= 0 and idade_int <= 120:
+    if not nome.isalpha() or not idade_int >= 0 and idade_int <= 120 or not len(cpf_int) == 11:
         invalidos.append((nome, idade_int, cpf_int))
 
     if cpf_int in cadastros:
@@ -38,9 +32,12 @@ while True:
         nome, idade_str, cpf_str = partes
         cpf_int = cpf_str.replace("-","").replace(".","")
         idade_int = int(idade_str)
-       #print(nome, cpf_int, idade_int)
         verificacao()
-print("Lista")
+
+print(f"Cadastros válidos: {len(cadastros)}")
+print(f"Invalidos: {len(invalidos)}")
+print(f"Duplicados: {len(duplicados)}")
+print("=============================")
+print(duplicados)
+print("================")
 print(invalidos)
-print("Dicionário")
-print(cadastros)
