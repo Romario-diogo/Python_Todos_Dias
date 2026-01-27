@@ -47,7 +47,15 @@ vendas = [
     {"data": "2025-01-15", "produto": "Smartwatch", "quantidade": 2, "preco_unit": 299.90},
 ]
 
+dia_anterio = "0"
 
-for lista in vendas:
-    for chave, valor in lista.items():
-        print(chave[1])
+for d in vendas:
+    if dia_anterio == "0":
+        dia_anterio = d["data"][-2:]
+
+    if dia_anterio == d["data"][-2:]:
+        print(dia_anterio)
+        
+    if dia_anterio != d["data"][-2:]:
+        break        
+
