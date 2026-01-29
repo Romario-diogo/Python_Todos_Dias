@@ -44,7 +44,7 @@ se nao se
         armazena nas incorretas (lista de diconario)
 
 """
-
+lista_incorretos = []
 while True:
     print("=======================")
     print("Digite na mesma ordem !")
@@ -54,12 +54,26 @@ while True:
 
     partes = [e.strip() for e in entrada.split(",")]
 
+    if entrada.upper() == "SAIR":
+        #Tem entrada salva ?
+        break
+
     if len(partes) != 3:
         print("❌ Incompleto, não temos 3 entradas !")
-        print("\033[32m✔ Sucesso\033[0m")
-        print("\033[31m❌ Erro\033[0m")
+        #print("\033[32m✔ Sucesso\033[0m")
+        #print("\033[31m❌ Erro\033[0m")
         #Salvar na lista de dicionario incorretos 
         continue
 
     nome,acao,tempo = partes
-    print(nome, acao, tempo)
+
+    if not nome.isalpha() or not acao.isalpha() or not tempo.isdigit():
+        print(f"❌ Sim, algumas das partes de entrada não corresponde")
+        lista_incorretos.append({nome, acao, tempo})
+    else:
+        print("\033[32m✔ Sucesso\033[0m")
+        
+
+print(lista_incorretos)
+    
+#Parei validando ou nao o sair, e também o salvamento das entradas 
