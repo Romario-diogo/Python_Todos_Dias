@@ -46,15 +46,20 @@ se nao se
 """
 
 while True:
+    print("=======================")
     print("Digite na mesma ordem !")
-    print("NOME, AÇÃO, TEMPO: ")
-    entrada = ("")
-    entrada_tratada = [e.strip() for e in entrada.split(",")]
-    if entrada_tratada != 3:
-        print("Não contem 3 valores")
-        break
-    else:
-        nome, acao, tempo = entrada_tratada
-    print(nome)
-    print(acao)
-    print(tempo)
+    print("Nome, Ação, Tempo!")
+    print("=======================")
+    entrada = input("")
+
+    partes = [e.strip() for e in entrada.split(",")]
+
+    if len(partes) != 3:
+        print("❌ Incompleto, não temos 3 entradas !")
+        print("\033[32m✔ Sucesso\033[0m")
+        print("\033[31m❌ Erro\033[0m")
+        #Salvar na lista de dicionario incorretos 
+        continue
+
+    nome,acao,tempo = partes
+    print(nome, acao, tempo)
