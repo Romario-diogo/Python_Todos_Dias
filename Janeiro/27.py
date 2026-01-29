@@ -43,5 +43,18 @@ se nao se
     se não 
         armazena nas incorretas (lista de diconario)
 
-
 """
+
+while True:
+    print("Digite na mesma ordem !")
+    print("NOME, AÇÃO, TEMPO: ")
+    entrada = ("")
+    entrada_tratada = [e.strip() for e in entrada.split(",")]
+    if entrada_tratada != 3:
+        print("Não contem 3 valores")
+        break
+    else:
+        nome, acao, tempo = entrada_tratada
+    print(nome)
+    print(acao)
+    print(tempo)
