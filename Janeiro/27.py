@@ -37,6 +37,7 @@ se nao se
         armazenar nas incorretas (lista de diconario)
         break
         
+        
     se tempo é um numero enteiro ?
         sim, armazenar em validos 
     se não 
