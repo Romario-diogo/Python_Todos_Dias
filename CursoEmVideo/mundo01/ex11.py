@@ -9,7 +9,7 @@ while True:
             print("A Altura não pode ser negativo.")
             continue
         break
-    
+
     except ValueError:
         print("valor incorreto!")
 
